@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+    
+    <xacro:include filename="robot_core.xacro" />
+    <xacro:include filename="gazebo_control.xacro" />
+    <xacro:include filename="inertial_macros.xacro" />
+    <xacro:include filename="robot_control.urdf.xacro" />
+    <xacro:include filename="arm2transmission.xacro" />
+    <xacro:include filename="arm3transmission.xacro" />
+    <xacro:include filename="arm4transmission.xacro" />
+    <xacro:include filename="grip1transmission.xacro" />
+    <xacro:include filename="grip2transmission.xacro" />
+    
+    <ros2_control name = "GazeboSimSystem" type= "system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <xacro:arm2transmission/>
+        <xacro:arm3transmission/>
+        <xacro:arm4transmission/>
+        <xacro:grip1transmission/>
+        <xacro:grip2transmission/>
+    </ros2_control>
+    <xacro:robot_controller/>
+    
+    
+</robot>
