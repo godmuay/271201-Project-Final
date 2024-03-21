@@ -25,3 +25,4 @@ ros2 launch articubot_one launch_sim.launch.py
 ```
 After that run the this file to control robot
 ```
+ros2 run articubot_one controller.py
